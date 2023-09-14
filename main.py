@@ -25,16 +25,39 @@ filter_menu = filter_data.get("filter_menu", [])
 with open('modified_names.json', 'r') as file:
     modification_data = json.load(file)
 
+#
+# JATIM 1 GRAB
+#
 urls_grab = {
-    # "KAK ROSE 1 LANDUNGSARI": "https://food.grab.com/id/id/restaurant/geprek-kak-rose-tlogomas-delivery/IDGFSTI00003j09",
-    "TLOGOMAS": "https://food.grab.com/id/id/restaurant/ayam-goreng-nelongso-tlogomas-delivery/6-C23HDCK2CAVTL2",
-    "KAK ROSE 1 DINOYO": "https://food.grab.com/id/id/restaurant/geprek-kak-rose-lowokwaru-delivery/IDGFSTI000026kl",
-    "KAK ROSE 2 SUMBERSARI": "https://food.grab.com/id/id/restaurant/geprek-kak-rose-sumbersari-delivery/IDGFSTI000026ko",
-    "KAK ROSE 11 SIGURA": "https://food.grab.com/id/id/restaurant/geprek-kak-rose-karangbesuki-delivery/6-CZAHEP3ZBEKAGN"
+    # "KAK ROSE 1 DINOYO": "https://food.grab.com/id/id/restaurant/geprek-kak-rose-lowokwaru-delivery/IDGFSTI000026kl", # LOWOKWARU
+    # "KAK ROSE 2 SUMBERSARI": "https://food.grab.com/id/id/restaurant/geprek-kak-rose-sumbersari-delivery/IDGFSTI000026ko", 
+    # "KAK ROSE 5 LANDUNGSARI": "https://food.grab.com/id/id/restaurant/geprek-kak-rose-tlogomas-delivery/IDGFSTI00003j09", # TLOGOMAS
+    # "KAK ROSE 6 CENGKEH": "https://food.grab.com/id/id/restaurant/geprek-kak-rose-jatimulyo-delivery/IDGFSTI00003fld", # JATIMULYO
+    # "KAK ROSE 8 SAWOJAJAR": "https://food.grab.com/id/id/restaurant/geprek-kak-rose-sawojajar-delivery/6-CYW2MBJANXADV2",
+    # "KAK ROSE 11 SIGURA": "https://food.grab.com/id/id/restaurant/geprek-kak-rose-karangbesuki-delivery/6-CZAHEP3ZBEKAGN", # KARANGBESUKI
+    # "KAK ROSE 12 SUHAT": "https://food.grab.com/id/en/restaurant/geprek-kak-rose-suhat-delivery/6-CY61RZCHACBDGA",
+    # "KAK ROSE 13 SUKUN": "https://food.grab.com/id/id/restaurant/geprek-kak-rose-sukun-delivery/6-CZKZUFJTJAUGNN",
+
+    # "SARUMPET 1 SIGURA": "https://food.grab.com/id/id/restaurant/sego-sambel-sarumpet-karang-besuki-delivery/6-C26JLTNTC8BHCJ", # KARANGBESUKI
+    # "SARUMPET 3 CANDI PANGGUNG": "https://food.grab.com/id/en/restaurant/sego-sambel-sarumpet-candi-panggung-delivery/AWlIW2DOfYWaYaQC5dRK",
+    # "SARUMPET 8 SAWOJAJAR": "https://food.grab.com/id/id/restaurant/sambal-sarumpet-lesanpuro-delivery/6-C3AYFGJTVX62TA", # LESANPURO
+    # "SARUMPET 10 BATU": "https://food.grab.com/id/id/restaurant/sego-sambel-sarumpet-sisir-delivery/6-C3LXN7M1N4ADLJ", # SISIR
+
+    # "TLOGOMAS": "https://food.grab.com/id/id/restaurant/ayam-goreng-nelongso-tlogomas-delivery/6-C23HDCK2CAVTL2",
+    # "SUHAT NEW": "https://food.grab.com/id/id/restaurant/ayam-goreng-nelongso-soehat-new-delivery/AWhVcAOVZXYdMpch2OG0",
+    # "UM": "https://food.grab.com/id/id/restaurant/ayam-goreng-nelongso-um-delivery/IDGFSTI000026l2",
+    # "BLIMBING": "https://food.grab.com/id/id/restaurant/ayam-goreng-nelongso-blimbing-delivery/IDGFSTI000010xb",
+    # "DIENG": "https://food.grab.com/id/id/restaurant/ayam-goreng-nelongso-dieng-delivery/IDGFSTI0000112q",
+    # "SINGOSARI II": "https://food.grab.com/id/id/restaurant/ayam-goreng-nelongso-singosari-delivery/IDGFSTI000026kz",
+    # "SAWOJAJAR II": "https://food.grab.com/id/id/restaurant/ayam-goreng-nelongso-sawojajar-delivery/AWhWblfp2bMmVZfr_Es1",
+    # "BURING": "https://food.grab.com/id/id/restaurant/ayam-goreng-nelongso-buring-delivery/IDGFSTI00002sn6",
+    # "LAWANG": "https://food.grab.com/id/id/restaurant/ayam-goreng-nelongso-kalirejo-delivery/6-C2MDSCJHMB3TLA",
+    # "PAKIS": "https://food.grab.com/id/id/restaurant/ayam-goreng-nelongso-pakis-delivery/IDGFSTI000010x7",
+    # "BULULAWANG": "https://food.grab.com/id/id/restaurant/ayam-goreng-nelongso-bululawang-delivery/IDGFSTI000026kx",
+    # "TUREN": "https://food.grab.com/id/id/restaurant/ayam-goreng-nelongso-talok-delivery/6-CY43TVJAC7LKG6",
 }
 useragents = read_useragents('useragent.txt')
 
-data = []
 for name, url, in urls_grab.items():
     user_agent = random.choice(useragents)
     headers = {
@@ -55,25 +78,19 @@ for name, url, in urls_grab.items():
                     menu_names.append(modified_menu_names)
 
         if menu_names:
-            data.extend([(name, menu_name, "GRAB") for menu_name in menu_names])
+            print(f"Toko: {name}")
+            for nama_menu in menu_names:
+                print(f"\tMenu yang habis adalah: {nama_menu}")
         else:
-            data.append((name, "[FULL]", "GRAB"))
+            print(f"Toko: {name} [FULL]")
 
-df = pd.DataFrame(data, columns=["OUTLET", "MENU", "APLIKASI"])
-folder_path = "csv"
 
-file_name = "hasil.csv"
-counter = 1
-while os.path.exists(os.path.join(folder_path, file_name)):
-    file_name = f"hasil{counter}.csv"
-    counter += 1
 
-file_path = os.path.join(folder_path, file_name)
-df.to_csv(file_path, index=False)
 
-#
-# PRINT CLI
-#
+
+
+
+# data = []
 # for name, url, in urls_grab.items():
 #     user_agent = random.choice(useragents)
 #     headers = {
@@ -94,19 +111,21 @@ df.to_csv(file_path, index=False)
 #                     menu_names.append(modified_menu_names)
 
 #         if menu_names:
-#             print(f"Toko: {name}")
-#             for nama_menu in menu_names:
-#                 print(f"\tMenu yang habis adalah: {nama_menu}")
+#             data.extend([(name, menu_name, "GRAB") for menu_name in menu_names])
 #         else:
-#             print(f"Toko: {name} [FULL]")
+#             data.append((name, "[FULL]", "GRAB"))
 
+# df = pd.DataFrame(data, columns=["OUTLET", "MENU", "APLIKASI"])
+# folder_path = "csv"
 
+# file_name = "hasil.csv"
+# counter = 1
+# while os.path.exists(os.path.join(folder_path, file_name)):
+#     file_name = f"hasil{counter}.csv"
+#     counter += 1
 
-
-
-
-
-
+# file_path = os.path.join(folder_path, file_name)
+# df.to_csv(file_path, index=False)
 
 
 

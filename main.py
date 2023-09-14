@@ -34,24 +34,33 @@ with open('modified_names.json', 'r') as file:
 # JATIM 1 GOJEK
 #
 
-urls_gojek = {
-    "TLOGOMAS": "https://gofood.co.id/malang/restaurant/ayam-goreng-nelongso-tlogomas-369ca55d-29a7-472e-8c1c-ba9d7a7aa272",
-    "SUHAT NEW": "https://gofood.co.id/malang/restaurant/ayam-goreng-nelongso-suhat-8f2e5e4a-53eb-4d77-96a4-8cacb5082ae6",
-    "UM": "https://gofood.co.id/malang/restaurant/ayam-goreng-nelongso-um-d7f461e5-2ca8-42ca-b3ec-4858343f9571",
-    "BLIMBING": "https://gofood.co.id/malang/restaurant/ayam-goreng-nelongso-blimbing-54a7b458-d141-49bd-9c78-313edfdde842",
-    "DIENG": "https://gofood.co.id/malang/restaurant/ayam-goreng-nelongso-dieng-bd8b162e-ed72-4edf-8ba3-2f0b3e37685a",
-    "SINGOSARI II": "https://gofood.co.id/malang/restaurant/ayam-goreng-nelongso-singosari-2f40eaf3-9b1f-413e-b859-cb791ef4cf3e",
-    "SAWOJAJAR II": "https://gofood.co.id/malang/restaurant/ayam-goreng-nelongso-sawojajar-421794a1-a9c8-4b5b-9e49-f517340e55a7",
-    "BURING": "https://gofood.co.id/malang/restaurant/ayam-goreng-nelongso-buring-5c1f4977-04af-4733-9a38-7679fad01ad3",
-    "LAWANG": "https://gofood.co.id/malang/restaurant/ayam-goreng-nelongso-lawang-e2e86082-dd6e-459f-bfcf-63bf27844720",
-    "PAKIS": "https://gofood.co.id/malang/restaurant/ayam-goreng-nelongso-pakis-dc95a738-3a61-4348-8e35-d528662c4d50",
-    "BULULAWANG": "https://gofood.co.id/malang/restaurant/ayam-goreng-nelongso-bululawang-fde4932c-4001-4795-a0d6-87c0dec6ad5b",
-    "TUREN": "https://gofood.co.id/malang/restaurant/ayam-goreng-nelongso-turen-462c1e32-dbfd-478f-a69d-467d75bd892e",
+urls_gojek_jatim_one = {
+    "KAK ROSE 1 DINOYO": "https://gofood.co.id/malang/restaurant/geprek-kak-rose-lowokwaru-fc883e75-f5c3-4ac6-b8db-b621cfaf9177", # LOWOKWARU
+    "KAK ROSE 2 SUMBERSARI": "https://gofood.co.id/malang/restaurant/geprek-kak-rose-sumbersari-2cab085a-324f-4f82-a031-ccb0654c48ac", 
+    "KAK ROSE 5 LANDUNGSARI": "https://gofood.co.id/malang/restaurant/geprek-kak-rose-tlogomas-a2568178-5052-4b94-b8b4-52d48ae03a1f", # TLOGOMAS
+    "KAK ROSE 6 CENGKEH": "https://gofood.co.id/malang/restaurant/geprek-kak-rose-bunga-cengkeh-11dcb458-3b82-4602-bf5c-2446f569b59d", # BUNGACENGKEH
+    "KAK ROSE 8 SAWOJAJAR": "https://gofood.co.id/malang/restaurant/geprek-kak-rose-sawojajar-8a1c1aa1-ec8a-4b42-9924-a96362e2be80",
+    "KAK ROSE 11 SIGURA": "https://gofood.co.id/malang/restaurant/geprek-kak-rose-sigura-gura-f5cf38e9-f195-4903-bfde-3a7fe61f14cb", # SIGURA GURA
+    "KAK ROSE 12 SUHAT": "https://gofood.co.id/malang/restaurant/geprek-kak-rose-soekarno-hatta-f5492f10-159a-4ba6-b2c0-90d5b403de28",
+    "KAK ROSE 13 SUKUN": "https://gofood.co.id/malang/restaurant/geprek-kak-rose-sukun-fdee1fc0-6904-4688-8df1-582aef2494d3",
+
+    # "TLOGOMAS": "https://gofood.co.id/malang/restaurant/ayam-goreng-nelongso-tlogomas-369ca55d-29a7-472e-8c1c-ba9d7a7aa272",
+    # "SUHAT NEW": "https://gofood.co.id/malang/restaurant/ayam-goreng-nelongso-suhat-8f2e5e4a-53eb-4d77-96a4-8cacb5082ae6",
+    # "UM": "https://gofood.co.id/malang/restaurant/ayam-goreng-nelongso-um-d7f461e5-2ca8-42ca-b3ec-4858343f9571",
+    # "BLIMBING": "https://gofood.co.id/malang/restaurant/ayam-goreng-nelongso-blimbing-54a7b458-d141-49bd-9c78-313edfdde842",
+    # "DIENG": "https://gofood.co.id/malang/restaurant/ayam-goreng-nelongso-dieng-bd8b162e-ed72-4edf-8ba3-2f0b3e37685a",
+    # "SINGOSARI II": "https://gofood.co.id/malang/restaurant/ayam-goreng-nelongso-singosari-2f40eaf3-9b1f-413e-b859-cb791ef4cf3e",
+    # "SAWOJAJAR II": "https://gofood.co.id/malang/restaurant/ayam-goreng-nelongso-sawojajar-421794a1-a9c8-4b5b-9e49-f517340e55a7",
+    # "BURING": "https://gofood.co.id/malang/restaurant/ayam-goreng-nelongso-buring-5c1f4977-04af-4733-9a38-7679fad01ad3",
+    # "LAWANG": "https://gofood.co.id/malang/restaurant/ayam-goreng-nelongso-lawang-e2e86082-dd6e-459f-bfcf-63bf27844720",
+    # "PAKIS": "https://gofood.co.id/malang/restaurant/ayam-goreng-nelongso-pakis-dc95a738-3a61-4348-8e35-d528662c4d50",
+    # "BULULAWANG": "https://gofood.co.id/malang/restaurant/ayam-goreng-nelongso-bululawang-fde4932c-4001-4795-a0d6-87c0dec6ad5b",
+    # "TUREN": "https://gofood.co.id/malang/restaurant/ayam-goreng-nelongso-turen-462c1e32-dbfd-478f-a69d-467d75bd892e",
 }
 useragents = read_useragents('useragent.txt')
 proxies = read_proxies('proxy.txt')
 
-for name, url, in urls_gojek.items():
+for name, url, in urls_gojek_jatim_one.items():
     user_agent = random.choice(useragents)
     proxy = random.choice(proxies)
     headers = {
@@ -99,7 +108,7 @@ for name, url, in urls_gojek.items():
 # JATIM 1 GRAB
 #
 
-# urls_grab = {
+# urls_grab_jatim_one = {
     # "KAK ROSE 1 DINOYO": "https://food.grab.com/id/id/restaurant/geprek-kak-rose-lowokwaru-delivery/IDGFSTI000026kl", # LOWOKWARU
     # "KAK ROSE 2 SUMBERSARI": "https://food.grab.com/id/id/restaurant/geprek-kak-rose-sumbersari-delivery/IDGFSTI000026ko", 
     # "KAK ROSE 5 LANDUNGSARI": "https://food.grab.com/id/id/restaurant/geprek-kak-rose-tlogomas-delivery/IDGFSTI00003j09", # TLOGOMAS
@@ -129,7 +138,7 @@ for name, url, in urls_gojek.items():
 # }
 # useragents = read_useragents('useragent.txt')
 
-# for name, url, in urls_grab.items():
+# for name, url, in urls_grab_jatim_one.items():
 #     user_agent = random.choice(useragents)
 #     headers = {
 #         "User-Agent": user_agent
@@ -162,7 +171,7 @@ for name, url, in urls_gojek.items():
 
 
 # data = []
-# for name, url, in urls_grab.items():
+# for name, url, in urls_grab_jatim_one.items():
 #     user_agent = random.choice(useragents)
 #     headers = {
 #         "User-Agent": user_agent

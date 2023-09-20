@@ -1,0 +1,2 @@
+JIka tidak berhasil mengambil data pada URl, akan keluar output [TIDAK BERHASIl]
+MENGAMBIL OUTLET GRAB TUTUP
